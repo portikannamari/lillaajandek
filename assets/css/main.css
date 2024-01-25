@@ -1,0 +1,369 @@
+/**
+* Template Name: Append
+* Updated: Jan 09 2024 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/append-bootstrap-website-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Lato", sans-serif;
+}
+
+/* Global Colors */
+:root {
+  --background-color: #ffffff;
+  --background-color-rgb: 255, 255, 255;
+  --default-color: #212529;
+  --default-color-rgb: 33, 37, 41;
+  --primary-color: #e84545;
+  --primary-color-rgb: 232, 69, 69;
+  --secondary-color: #32353a;
+  --secondary-color-rgb: 50, 53, 58;
+  --contrast-color: #ffffff;
+  --contrast-color-rgb: 255, 255, 255;
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: #3a3939;
+  --nav-hover-color: #e84545;
+  --nav-dropdown-color: #3a3939;
+  --nav-dropdown-hover-color: #e84545;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-mobile-background-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: rgba(var(--primary-color-rgb), 0.7);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--secondary-color);
+  font-family: var(--heading-font);
+}
+
+section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background-color: var(--background-color);
+  transition: all 0.6s ease-out;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader div {
+  width: 13px;
+  height: 13px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  position: absolute;
+  left: 50%;
+}
+
+#preloader div:nth-child(1) {
+  left: calc(50% + 8px);
+  animation: animate-preloader-1 0.6s infinite;
+}
+
+#preloader div:nth-child(2) {
+  left: calc(50% + 8px);
+  animation: animate-preloader-2 0.6s infinite;
+}
+
+#preloader div:nth-child(3) {
+  left: calc(50% + 32px);
+  animation: animate-preloader-2 0.6s infinite;
+}
+
+#preloader div:nth-child(4) {
+  left: calc(50% + 56px);
+  animation: animate-preloader-3 0.6s infinite;
+}
+
+@keyframes animate-preloader-1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes animate-preloader-3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes animate-preloader-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+/*--------------------------------------------------------------
+# Home Page
+--------------------------------------------------------------*/
+/* Hero Section - Home Page
+------------------------------*/
+.hero {
+  --default-color: #ffffff;
+  --default-color-rgb: 255, 255, 255;
+  --background-color: #000000;
+  --background-color-rgb: 0, 0, 0;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 160px 0 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero:before {
+  content: "";
+  background: rgba(var(--background-color-rgb), 0);
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+  align-self: first baseline;
+}
+
+.hero .card {
+  width: min-content;
+  padding: 9px 9px 9px 9px;
+  background-color: #F6F5F5;
+  z-index: 3;
+  border-radius: 0;
+}
+
+.hero .card .card-border {
+  border: 2px solid #7F703D;
+  height: 100%;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  padding: 5px 5px 5px 5px;
+}
+
+.hero h2 {
+  margin: 5px 5px 5px 5px;
+  font-family: 'Futura', sans-serif;
+  letter-spacing: 0.1em;
+  /* Character spacing */
+  font-weight: 400;
+  font-size: 2.4em;
+  text-align: center;
+  /* Initial font size */
+  transition: font-size 0.3s ease;
+  color: #7F703D;
+  white-space: nowrap;
+}
+
+.hero p {
+  margin: 5px 5px 5px 5px;
+  font-family: 'Futura', sans-serif;
+  /* Character spacing */
+  font-weight: 500;
+  font-size: 0.9em;
+  text-align: center;
+  /* Initial font size */
+  transition: font-size 0.3s ease;
+  color: #7F703D;
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+  }
+
+  .hero .header-image {
+    height: 80%;
+  }
+
+  /* Styles for screens with a maximum width of 768 pixels (typical for tablets and smaller screens) */
+  .hero h2 {
+    margin: 2px 2px 2px 2px;
+    font-size: 2.2em;
+    /* Adjust font size for smaller screens */
+    color: #ffffff;
+  }
+
+  .hero p {
+    margin: 2px 2px 2px 2px;
+    font-size: 1em;
+    /* Adjust font size for smaller screens */
+    color: #ffffff;
+  }
+
+  .hero .card {
+    background: rgba(var(--background-color-rgb), 0.6);
+    padding: 2px;
+  }
+
+  .hero .card .card-border {
+    border: 1px solid #ffffff;
+  }
+
+  .hero .container {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* About Section - Home Page
+------------------------------*/
+.about {
+  --background-color: #ffffff;
+  padding: 0;
+}
+
+.about .content {
+  margin-top: 20px;
+  padding: 5em 6em 5em 3em;
+}
+
+.about .container {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.about .content h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-family: 'Futura light', sans-serif;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: 0.25em;
+  color: #F6F5F5;
+  text-align: center;
+}
+
+.about .content-border {
+  margin: 30px 30px 30px 30px;
+  background-color: #7F703D;
+}
+
+.about .content p {
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Futura light', sans-serif;
+  color: #F6F5F5;
+  font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  .about .container {
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .about .content {
+    margin: 0;
+    padding: 2em 2em 2em 2em;
+  }
+
+  .about .content h3 {
+    font-size: 20px;
+  }
+
+  .about .content p {
+    font-size: 15px;
+    margin: 0.1em;
+  }
+
+  .about .content-border {
+    margin: 0;
+    background-color: #7F703D;
+  }
+}
